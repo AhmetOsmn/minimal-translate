@@ -1,0 +1,141 @@
+name: CI Build & Semantic Release (Electron + pnpm)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: release-main
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  build:
+    name: Build (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          STORE_PATH=$(pnpm store path 2>/dev/null || echo "")
+          if [ -z "$STORE_PATH" ]; then
+            case "${{ runner.os }}" in
+              Windows) STORE_PATH="${LOCALAPPDATA}/pnpm/store" ;;
+              macOS) STORE_PATH="${HOME}/Library/pnpm/store" ;;
+              *) STORE_PATH="${HOME}/.local/share/pnpm/store" ;;
+            esac
+          fi
+          echo "STORE_PATH=$STORE_PATH" >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Cache Electron
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/electron
+            ~/.cache/electron-builder
+          key: ${{ runner.os }}-electron-cache
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build / Package (explicit targets)
+        run: |
+          pnpm run build
+          if [ "${{ runner.os }}" = "Windows" ]; then
+            pnpm exec electron-builder --win nsis portable --publish never
+          else
+            pnpm exec electron-builder --mac dmg --publish never
+          fi
+        shell: bash
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-${{ matrix.os }}
+          path: release/**
+          if-no-files-found: error
+
+  release:
+    name: Semantic Release (main only)
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Download artifacts (all OS)
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Prepare release assets (space-safe, exclude unpacked)
+        run: |
+          mkdir -p release-assets
+
+          find artifacts -type f \
+            -not -path "*/win-unpacked/*" \
+            \( -name "*.exe" -o -name "*.dmg" -o -name "*.msi" -o -name "*.AppImage" -o -name "*.deb" -o -name "*.yml" -o -name "*.blockmap" \) \
+            -print0 | xargs -0 -I{} cp "{}" release-assets/
+
+          echo "=== release-assets ==="
+          ls -lh release-assets/
+
+      - name: Configure git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm exec semantic-release

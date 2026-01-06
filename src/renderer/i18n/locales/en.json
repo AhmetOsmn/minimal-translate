@@ -1,0 +1,257 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "test": "Test",
+    "active": "Active",
+    "inactive": "Inactive",
+    "saved": "Saved!",
+    "saving": "Saving...",
+    "loading": "Loading...",
+    "search": "Search...",
+    "close": "Close",
+    "add": "Add",
+    "none": "None",
+    "selected": "Selected",
+    "example": "Example",
+    "tips": "Tips"
+  },
+  "sidebar": {
+    "howto": "How to Use",
+    "models": "AI Models",
+    "apikeys": "API Keys",
+    "translation": "Translation Settings",
+    "shortcuts": "Keyboard Shortcuts",
+    "prompts": "Prompt Settings",
+    "notifications": "Notifications",
+    "darkMode": "Dark Mode"
+  },
+  "translate": {
+    "placeholder": "Type to translate...",
+    "success": "Copied to clipboard!",
+    "error": "Translation failed",
+    "connectionError": "Connection error",
+    "refineActive": "Refinement active",
+    "refineInactive": "Refinement inactive",
+    "settings": "Settings",
+    "openSettings": "Open settings →",
+    "apiKeyError": "API key"
+  },
+  "settings": {
+    "title": "Minimal Translate Settings",
+    "howto": {
+      "title": "How to Use",
+      "subtitle": "Translate quickly with Minimal Translate",
+      "step1": {
+        "title": "Use the Shortcut",
+        "description": "Press these keys anywhere:"
+      },
+      "step2": {
+        "title": "Type the Text",
+        "description": "Enter the text you want to translate"
+      },
+      "step3": {
+        "title": "Press Enter",
+        "description": "Translation will start automatically"
+      },
+      "step4": {
+        "title": "Paste",
+        "description": "Translation copied to clipboard, paste it wherever you want"
+      },
+      "tips": {
+        "tip1": "Press ESC to close the translation window",
+        "tip2": "You can also close it by clicking outside the window",
+        "tip3": "Translation is automatically copied to clipboard when completed",
+        "tip4": "Source language is automatically detected"
+      }
+    },
+    "models": {
+      "title": "AI Models",
+      "subtitle": "Select the AI model to use for translation",
+      "openai": {
+        "name": "OpenAI (GPT-4)",
+        "description": "Contextual translation. Understands idioms and nuances."
+      },
+      "gemini": {
+        "name": "Google Gemini",
+        "description": "Advanced AI translation. Ideal for complex texts."
+      },
+      "openrouter": {
+        "name": "OpenRouter",
+        "description": "Access many AI models with a single API. Free models available!"
+      },
+      "openrouterPicker": {
+        "title": "OpenRouter Model Selection",
+        "selected": "Selected Model:",
+        "free": "Free",
+        "searchPlaceholder": "Search models...",
+        "freeFilter": "Free",
+        "loading": "Loading models...",
+        "error": "Failed to load model list",
+        "retry": "Retry",
+        "noResults": "No matching models found",
+        "noModels": "No models found",
+        "customId": "Custom Model ID (if not in list)",
+        "customPlaceholder": "e.g: openai/gpt-4o-mini",
+        "save": "Save",
+        "viewAll": "View all models",
+        "note": "Make sure your API key for the selected model is defined in the <strong>API Keys</strong> section."
+      },
+      "saved": "Model saved!"
+    },
+    "apikeys": {
+      "title": "API Keys",
+      "subtitle": "Manage API keys for translation services",
+      "openai": "OpenAI API",
+      "gemini": "Google Gemini API",
+      "openrouter": "OpenRouter API",
+      "getApiKey": "Get API key",
+      "testSuccess": "Connection successful!",
+      "testFailed": "Connection failed",
+      "testError": "Error occurred during test",
+      "securityNote": "Your API keys are stored encrypted using your operating system's secure storage (Keychain/Credential Store). They are never sent to our servers and are only used locally."
+    },
+    "shortcuts": {
+      "title": "Keyboard Shortcuts",
+      "subtitle": "Set the shortcut key to open the translation window",
+      "activeShortcut": "Active Shortcut",
+      "changeShortcut": "Change Shortcut",
+      "newShortcut": "New Shortcut",
+      "pressKeys": "Press shortcut keys...",
+      "clickToSet": "Click the button to set a new shortcut",
+      "setNew": "Set New Shortcut",
+      "invalidShortcut": "Enter a valid shortcut (at least one modifier + key)",
+      "saveFailed": "Failed to save shortcut",
+      "saveError": "Error occurred while saving shortcut",
+      "saveSuccess": "Shortcut saved successfully!",
+      "tips": {
+        "tip1": "Use at least one modifier key (Ctrl, Cmd, Alt, Shift)",
+        "tip2": "Choose a combination that doesn't conflict with system shortcuts",
+        "tip3": "Recommended: Ctrl+Shift+T or Cmd+Shift+T"
+      }
+    },
+    "translation": {
+      "title": "Translation Settings",
+      "subtitle": "Customize translation behavior",
+      "targetLanguage": {
+        "title": "Target Language",
+        "description": "Select the target language for translations. Default language is English.",
+        "searchPlaceholder": "Search language...",
+        "notFound": "Language not found"
+      },
+      "refine": {
+        "title": "{{language}} Refinement",
+        "description": "When active, translation is converted to a smoother and more understandable {{language}} sentence. The AI model not only translates the text but also improves it in terms of grammar and expression."
+      },
+      "example": {
+        "input": "Input:",
+        "translation": "{{language}} Translation:",
+        "sampleInput": "\"tomorrow meeting will you attend\"",
+        "fallback": "Translation will be made to {{language}} and refined."
+      }
+    },
+    "prompts": {
+      "title": "Prompt Settings",
+      "subtitle": "Manage your default prompts for translation operations. You can save up to 5 prompts.",
+      "selected": "Selected Prompt",
+      "management": "Prompt Management",
+      "addNew": "Add New Prompt",
+      "maxReached": "Maximum 5 prompts can be saved",
+      "empty": "No prompts added yet",
+      "edit": "Edit Prompt",
+      "add": "Add New Prompt",
+      "name": "Prompt Name",
+      "namePlaceholder": "e.g: Technical Documentation",
+      "content": "Prompt Content",
+      "contentPlaceholder": "Enter the prompt content to be used in translation operations...",
+      "deleteConfirm": "Delete Prompt",
+      "deleteConfirmMessage": "Are you sure you want to delete \"{{name}}\"? This action cannot be undone."
+    },
+    "notifications": {
+      "title": "Notification Settings",
+      "subtitle": "Manage your notification preferences",
+      "sendNotifications": {
+        "title": "Send Notifications",
+        "description": "When active, a notification will be sent when translation is completed."
+      },
+      "permissionWarning": {
+        "title": "Notification Permission Required",
+        "description": "Notification permissions need to be enabled for this feature to work."
+      },
+      "permissionDenied": {
+        "title": "Notification Permission Denied",
+        "step1": "1. Open System Preferences",
+        "step2": "2. Go to Notifications",
+        "step3": "3. Find Minimal Translate app and enable notifications"
+      },
+      "permissionDefault": {
+        "message": "Notification permission has not been granted yet. When the system asks for permission, select 'Allow'."
+      },
+      "permissionStatus": {
+        "title": "Notification Permission Status",
+        "granted": "Permission granted",
+        "denied": "Permission denied",
+        "default": "Permission not granted yet"
+      },
+      "checkingPermission": "Checking permission",
+      "openSettings": "Open Notification Settings"
+    }
+  },
+  "errors": {
+    "translationFailed": "Translation failed",
+    "connectionError": "Connection error",
+    "apiKeyMissing": "API key missing",
+    "apiKeyInvalid": "API key invalid",
+    "generic": "An error occurred. Please try again.",
+    "saveFailed": "Failed to save",
+    "deleteFailed": "Failed to delete",
+    "networkError": "No internet connection",
+    "apiKeyInvalidProvider": "{{provider}} API key invalid",
+    "quotaExceeded": "{{provider}} usage limit exceeded",
+    "insufficientBalance": "{{provider}} insufficient balance",
+    "invalidRequest": "Invalid request",
+    "serviceUnavailable": "{{provider}} service is currently unavailable",
+    "connectionFailed": "Failed to connect to {{provider}}",
+    "geminiNoResponse": "Gemini did not respond",
+    "openRouterNoResponse": "OpenRouter did not respond",
+    "unknownService": "Unknown translation service",
+    "connectionTestFailed": "Connection test failed",
+    "apiKeyNotDefined": "{{modelName}} API key is not defined. Please enter your API key from settings.",
+    "translationError": "An error occurred during translation",
+    "apiKeyTestFailed": "API key test failed"
+  },
+  "languages": {
+    "en": "English",
+    "tr": "Turkish",
+    "de": "German",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "ru": "Russian",
+    "ja": "Japanese",
+    "zh": "Chinese",
+    "ko": "Korean",
+    "ar": "Arabic",
+    "nl": "Dutch",
+    "pl": "Polish",
+    "sv": "Swedish",
+    "da": "Danish",
+    "no": "Norwegian",
+    "fi": "Finnish",
+    "cs": "Czech",
+    "hu": "Hungarian",
+    "ro": "Romanian",
+    "el": "Greek",
+    "he": "Hebrew",
+    "hi": "Hindi",
+    "th": "Thai",
+    "vi": "Vietnamese",
+    "id": "Indonesian",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "hr": "Croatian"
+  }
+}

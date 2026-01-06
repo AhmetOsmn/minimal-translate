@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.cursor/
+# Build outputs
+dist/
+release/
+
+# IDE
+.idea/
+*.swp
+*.swo
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Electron
+out/
+.electron/
+electron-user-data/
+*.store
+
+# Electron Builder
+build/
+app-builds/
+
+# Electron Store (test/local config files)
+config.json
+*.config.json
+

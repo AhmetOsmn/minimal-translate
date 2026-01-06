@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal Translate - Dev</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+      .container {
+        text-align: center;
+        padding: 2rem;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, #60a5fa, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      p {
+        color: #94a3b8;
+        margin-bottom: 2rem;
+      }
+      .links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+      }
+      a {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 0.5rem;
+        color: #e2e8f0;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      a:hover {
+        background: #334155;
+        border-color: #3b82f6;
+      }
+      .hint {
+        margin-top: 2rem;
+        padding: 1rem;
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        color: #94a3b8;
+      }
+      code {
+        background: #1e293b;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🌐 Minimal Translate</h1>
+      <p>Geliştirme modu</p>
+      
+      <div class="links">
+        <a href="/translate/">Çeviri Popup</a>
+        <a href="/settings/">Ayarlar Paneli</a>
+      </div>
+      
+      <div class="hint">
+        💡 Electron ile test etmek için ayrı bir terminalde <code>pnpm start</code> çalıştırın
+      </div>
+    </div>
+  </body>
+</html>
+

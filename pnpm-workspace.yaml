@@ -1,0 +1,7 @@
+packages:
+  - '.'
+
+enablePrePostScripts: true
+onlyBuiltDependencies:
+  - electron
+  - esbuild

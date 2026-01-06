@@ -1,0 +1,258 @@
+{
+  "common": {
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "test": "Test",
+    "active": "Aktif",
+    "inactive": "Pasif",
+    "saved": "Kaydedildi!",
+    "saving": "Kaydediliyor...",
+    "loading": "Yükleniyor...",
+    "search": "Ara...",
+    "close": "Kapat",
+    "add": "Ekle",
+    "none": "Hiçbiri",
+    "selected": "Seçili",
+    "example": "Örnek",
+    "tips": "İpuçları"
+  },
+  "sidebar": {
+    "howto": "Nasıl Kullanılır",
+    "models": "AI Modelleri",
+    "apikeys": "API Anahtarları",
+    "translation": "Çeviri Ayarları",
+    "shortcuts": "Kısayol Tuşları",
+    "prompts": "Prompt Ayarları",
+    "notifications": "Bildirimler",
+    "darkMode": "Koyu Tema"
+  },
+  "translate": {
+    "placeholder": "Çevirmek için yazın...",
+    "success": "Panoya kopyalandı!",
+    "error": "Çeviri başarısız",
+    "connectionError": "Bağlantı hatası",
+    "refineActive": "İyileştirme aktif",
+    "refineInactive": "İyileştirme pasif",
+    "settings": "Ayarlar",
+    "openSettings": "Ayarları aç →",
+    "apiKeyError": "API anahtarı"
+  },
+  "settings": {
+    "title": "Minimal Translate Ayarları",
+    "howto": {
+      "title": "Nasıl Kullanılır",
+      "subtitle": "Minimal Translate ile hızlıca çeviri yapın",
+      "step1": {
+        "title": "Kısayolu Kullanın",
+        "description": "Herhangi bir yerde bu tuşlara basın:"
+      },
+      "step2": {
+        "title": "Metni Yazın",
+        "description": "Çevirmek istediğiniz metni girin"
+      },
+      "step3": {
+        "title": "Enter Tuşuna Basın",
+        "description": "Çeviri otomatik olarak başlayacak"
+      },
+      "step4": {
+        "title": "Yapıştırın",
+        "description": "Çeviri panoya kopyalandı, istediğiniz yere yapıştırın"
+      },
+      "tips": {
+        "tip1": "ESC tuşuna basarak çeviri penceresini kapatabilirsiniz",
+        "tip2": "Pencere dışına tıklayarak da kapatabilirsiniz",
+        "tip3": "Çeviri tamamlandığında otomatik olarak panoya kopyalanır",
+        "tip4": "Kaynak dil otomatik olarak algılanır"
+      }
+    },
+    "models": {
+      "title": "AI Modelleri",
+      "subtitle": "Çeviri için kullanılacak AI modelini seçin",
+      "openai": {
+        "name": "OpenAI (GPT-4)",
+        "description": "Bağlamsal çeviri. Deyimleri ve nüansları anlar."
+      },
+      "gemini": {
+        "name": "Google Gemini",
+        "description": "Gelişmiş AI çeviri. Karmaşık metinler için ideal."
+      },
+      "openrouter": {
+        "name": "OpenRouter",
+        "description": "Birçok AI modeline tek API ile erişin. Ücretsiz modeller mevcut!"
+      },
+      "openrouterPicker": {
+        "title": "OpenRouter Model Seçimi",
+        "selected": "Seçili Model:",
+        "free": "Ücretsiz",
+        "searchPlaceholder": "Model ara...",
+        "freeFilter": "Ücretsiz",
+        "loading": "Modeller yükleniyor...",
+        "error": "Model listesi alınamadı",
+        "retry": "Tekrar dene",
+        "noResults": "Eşleşen model bulunamadı",
+        "noModels": "Model bulunamadı",
+        "customId": "Özel Model ID (listede yoksa)",
+        "customPlaceholder": "örn: openai/gpt-4o-mini",
+        "save": "Kaydet",
+        "viewAll": "Tüm modelleri görüntüle",
+        "note": "Seçtiğiniz model için API anahtarınızın <strong>API Anahtarları</strong> bölümünde tanımlı olduğundan emin olun."
+      },
+      "saved": "Model kaydedildi!"
+    },
+    "apikeys": {
+      "title": "API Anahtarları",
+      "subtitle": "Çeviri servislerinin API anahtarlarını yönetin",
+      "openai": "OpenAI API",
+      "gemini": "Google Gemini API",
+      "openrouter": "OpenRouter API",
+      "getApiKey": "API key al",
+      "testSuccess": "Bağlantı başarılı!",
+      "testFailed": "Bağlantı başarısız",
+      "testError": "Test sırasında hata oluştu",
+      "securityNote": "API anahtarlarınız işletim sisteminizin güvenli depolama sistemi (Keychain/Credential Store) kullanılarak şifrelenmiş olarak saklanır. Hiçbir zaman sunucularımıza gönderilmez ve yalnızca yerel olarak kullanılır."
+    },
+    "shortcuts": {
+      "title": "Kısayol Tuşları",
+      "subtitle": "Çeviri penceresini açmak için kullanılacak kısayolu belirleyin",
+      "activeShortcut": "Aktif Kısayol",
+      "changeShortcut": "Kısayol Değiştir",
+      "newShortcut": "Yeni Kısayol",
+      "pressKeys": "Kısayol tuşlarına basın...",
+      "clickToSet": "Yeni kısayol belirlemek için butona tıklayın",
+      "setNew": "Yeni Kısayol Belirle",
+      "invalidShortcut": "Geçerli bir kısayol girin (en az bir modifier + tuş)",
+      "saveFailed": "Kısayol kaydedilemedi",
+      "saveError": "Kısayol kaydedilirken hata oluştu",
+      "saveSuccess": "Kısayol başarıyla kaydedildi!",
+      "tips": {
+        "tip1": "En az bir modifier tuşu (Ctrl, Cmd, Alt, Shift) kullanın",
+        "tip2": "Sistem kısayollarıyla çakışmayan bir kombinasyon seçin",
+        "tip3": "Önerilen: Ctrl+Shift+T veya Cmd+Shift+T"
+      }
+    },
+    "translation": {
+      "title": "Çeviri Ayarları",
+      "subtitle": "Çeviri davranışını özelleştirin",
+      "targetLanguage": {
+        "title": "Hedef Dil",
+        "description": "Metinlerin çevrileceği hedef dili seçin. Varsayılan dil İngilizce'dir.",
+        "searchPlaceholder": "Dil ara...",
+        "notFound": "Dil bulunamadı"
+      },
+      "refine": {
+        "title": "{{language}} İyileştirme",
+        "description": "Aktif olduğunda, çeviri daha düzgün ve anlaşılır bir {{language}} cümleye dönüştürülür. AI modeli metni sadece çevirmekle kalmaz, aynı zamanda dil bilgisi ve ifade açısından iyileştirir."
+      },
+      "example": {
+        "input": "Girdi:",
+        "translation": "{{language}} Çevirisi:",
+        "sampleInput": "\"yarın toplantı var gelcen mi\"",
+        "fallback": "Çeviri {{language}} diline yapılır ve iyileştirilir."
+      }
+    },
+    "prompts": {
+      "title": "Prompt Ayarları",
+      "subtitle": "Çeviri işlemlerinde kullanılacak varsayılan prompt'larınızı yönetin. En fazla 5 prompt kaydedebilirsiniz.",
+      "selected": "Seçili Prompt",
+      "management": "Prompt Yönetimi",
+      "addNew": "Yeni Prompt Ekle",
+      "maxReached": "Maksimum 5 prompt kaydedilebilir",
+      "empty": "Henüz prompt eklenmemiş",
+      "edit": "Prompt Düzenle",
+      "add": "Yeni Prompt Ekle",
+      "name": "Prompt İsmi",
+      "namePlaceholder": "Örn: Teknik Dokümantasyon",
+      "content": "Prompt İçeriği",
+      "contentPlaceholder": "Çeviri işlemlerinde kullanılacak prompt içeriğini girin...",
+      "deleteConfirm": "Prompt'u Sil",
+      "deleteConfirmMessage": "\"{{name}}\" adlı prompt'u silmek istediğinizden emin misiniz? Bu işlem geri alınamaz."
+    },
+    "notifications": {
+      "title": "Bildirim Ayarları",
+      "subtitle": "Bildirim tercihlerinizi yönetin",
+      "sendNotifications": {
+        "title": "Bildirim Gönder",
+        "description": "Aktif olduğunda, çeviri tamamlandığında bildirim gönderilir."
+      },
+      "permissionWarning": {
+        "title": "Bildirim İzni Gerekli",
+        "description": "Bu özelliğin çalışması için bildirim izinlerinin etkinleştirilmesi gerekiyor."
+      },
+      "permissionDenied": {
+        "title": "Bildirim İzni Reddedildi",
+        "step1": "1. Sistem Tercihleri'ni açın",
+        "step2": "2. Bildirimler bölümüne gidin",
+        "step3": "3. Minimal Translate uygulamasını bulun ve bildirimleri etkinleştirin"
+      },
+      "permissionDefault": {
+        "message": "Bildirim izni henüz verilmedi. Sistem izin istediğinde 'İzin Ver' seçeneğini seçin."
+      },
+      "permissionStatus": {
+        "title": "Bildirim İzni Durumu",
+        "granted": "İzin verildi",
+        "denied": "İzin reddedildi",
+        "default": "Henüz izin verilmedi"
+      },
+      "checkingPermission": "İzin kontrol ediliyor",
+      "openSettings": "Bildirim Ayarlarını Aç"
+    }
+  },
+  "errors": {
+    "translationFailed": "Çeviri başarısız",
+    "connectionError": "Bağlantı hatası",
+    "apiKeyMissing": "API anahtarı eksik",
+    "apiKeyInvalid": "API anahtarı geçersiz",
+    "generic": "Bir hata oluştu. Lütfen tekrar deneyin.",
+    "saveFailed": "Kaydetme işlemi başarısız oldu",
+    "deleteFailed": "Silme işlemi başarısız oldu",
+    "networkError": "İnternet bağlantısı yok",
+    "apiKeyInvalidProvider": "{{provider}} API anahtarı geçersiz",
+    "quotaExceeded": "{{provider}} kullanım limiti aşıldı",
+    "insufficientBalance": "{{provider}} bakiyesi yetersiz",
+    "invalidRequest": "Geçersiz istek",
+    "serviceUnavailable": "{{provider}} servisi şu anda kullanılamıyor",
+    "connectionFailed": "{{provider}} ile bağlantı kurulamadı",
+    "geminiNoResponse": "Gemini yanıt vermedi",
+    "openRouterNoResponse": "OpenRouter yanıt vermedi",
+    "unknownService": "Bilinmeyen çeviri servisi",
+    "connectionTestFailed": "Bağlantı testi başarısız",
+    "apiKeyNotDefined": "{{modelName}} API anahtarı tanımlı değil. Ayarlardan API anahtarınızı girin.",
+    "translationError": "Çeviri sırasında bir hata oluştu",
+    "apiKeyTestFailed": "API anahtarı test edilemedi"
+  },
+  "languages": {
+    "en": "İngilizce",
+    "tr": "Türkçe",
+    "de": "Almanca",
+    "fr": "Fransızca",
+    "es": "İspanyolca",
+    "it": "İtalyanca",
+    "pt": "Portekizce",
+    "ru": "Rusça",
+    "ja": "Japonca",
+    "zh": "Çince",
+    "ko": "Korece",
+    "ar": "Arapça",
+    "nl": "Felemenkçe",
+    "pl": "Lehçe",
+    "sv": "İsveççe",
+    "da": "Danca",
+    "no": "Norveççe",
+    "fi": "Fince",
+    "cs": "Çekçe",
+    "hu": "Macarca",
+    "ro": "Romence",
+    "el": "Yunanca",
+    "he": "İbranice",
+    "hi": "Hintçe",
+    "th": "Tayca",
+    "vi": "Vietnamca",
+    "id": "Endonezce",
+    "uk": "Ukraynaca",
+    "bg": "Bulgarca",
+    "hr": "Hırvatça"
+  }
+}
+

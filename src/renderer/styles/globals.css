@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode Colors */
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f8fafc;
+    --color-bg-tertiary: #f1f5f9;
+    --color-bg-hover: #e2e8f0;
+    --color-bg-muted: #f8fafc;
+    
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #475569;
+    --color-text-tertiary: #64748b;
+    --color-text-placeholder: #94a3b8;
+    --color-text-muted: #64748b;
+    
+    --color-border-primary: #e2e8f0;
+    --color-border-secondary: #cbd5e1;
+    --color-border-muted: #e2e8f0;
+    
+    --color-card-bg: rgba(241, 245, 249, 0.8);
+    --color-card-border: rgba(226, 232, 240, 0.5);
+    
+    --color-input-bg: rgba(241, 245, 249, 0.5);
+    --color-input-border: rgba(203, 213, 225, 0.5);
+    
+    --color-button-secondary-bg: #e2e8f0;
+    --color-button-secondary-hover: #cbd5e1;
+    
+    --color-scrollbar: rgba(0, 0, 0, 0.2);
+    --color-scrollbar-hover: rgba(0, 0, 0, 0.3);
+  }
+
+  .dark {
+    /* Dark Mode Colors */
+    --color-bg-primary: #020617;
+    --color-bg-secondary: #0f172a;
+    --color-bg-tertiary: #1e293b;
+    --color-bg-hover: #334155;
+    --color-bg-muted: #1e293b;
+    
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #cbd5e1;
+    --color-text-tertiary: #94a3b8;
+    --color-text-placeholder: #64748b;
+    --color-text-muted: #64748b;
+    
+    --color-border-primary: #334155;
+    --color-border-secondary: #475569;
+    --color-border-muted: #475569;
+    
+    --color-card-bg: rgba(30, 41, 59, 0.8);
+    --color-card-border: rgba(51, 65, 85, 0.5);
+    
+    --color-input-bg: rgba(30, 41, 59, 0.5);
+    --color-input-border: rgba(71, 85, 105, 0.5);
+    
+    --color-button-secondary-bg: #334155;
+    --color-button-secondary-hover: #475569;
+    
+    --color-scrollbar: rgba(255, 255, 255, 0.1);
+    --color-scrollbar-hover: rgba(255, 255, 255, 0.2);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scrollbar-hover);
+  }
+}
+
+@layer components {
+  /* macOS window dragging */
+  .draggable {
+    -webkit-app-region: drag;
+  }
+
+  .draggable * {
+    -webkit-app-region: no-drag;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg px-4 py-2.5 outline-none
+           focus:border-accent-500 focus:ring-1 focus:ring-accent-500/50
+           transition-all duration-200;
+    background-color: var(--color-input-bg);
+    border-color: var(--color-input-border);
+    color: var(--color-text-primary);
+  }
+  
+  .input-field::placeholder {
+    color: var(--color-text-placeholder);
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 bg-accent-500 hover:bg-accent-600 
+           text-white font-medium rounded-lg
+           transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 font-medium rounded-lg transition-colors duration-200;
+    background-color: var(--color-button-secondary-bg);
+    color: var(--color-text-primary);
+    border-color: var(--color-border-secondary);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--color-button-secondary-hover);
+  }
+
+  .card {
+    @apply backdrop-blur-xl rounded-xl;
+    background-color: var(--color-card-bg);
+    border-color: var(--color-card-border);
+  }
+}
+
