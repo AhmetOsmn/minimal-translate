@@ -1,5 +1,7 @@
 # Minimal Translate - User Guide
 
+![Demo](assets/review.gif)
+
 Minimal Translate is a fast, minimal, and powerful desktop translation application. Access instant translation from anywhere with a global hotkey. Get professional results with AI-powered translation engines.
 
 ## Table of Contents
@@ -29,8 +31,8 @@ Minimal Translate runs in the background and stays accessible in the system tray
 - **Multiple AI Support**: OpenAI (GPT-4, GPT-4o-mini), Google Gemini, and OpenRouter with access to hundreds of models
 - **Auto Copy**: Translation results are automatically copied to clipboard
 - **100+ Languages**: Support for over 100 target languages
-- **Refinement Mode**: Automatic improvement for English translations
-- **Custom Prompts**: Create and use your own translation prompts (up to 5)
+- **Refinement Mode**: Automatic improvement for translations in any target language
+- **Custom Prompts**: Create and use your own translation prompts
 - **Customizable Shortcuts**: Set your preferred keyboard shortcut combination
 - **Dark Mode**: Eye-friendly dark theme support
 - **Multi-language UI**: English and Turkish interface support
@@ -76,14 +78,14 @@ The translation window is the main interface where you perform translations. It 
 - Look for the ✨ icon button in the header
 - Click to toggle refinement mode on/off
 - When active, the icon shows a checkmark (✨✓)
-- Refinement mode improves English translations for better grammar and expression
+- Refinement mode improves translations in the selected target language for better grammar and expression
 - The setting is saved automatically
 
 **Translation Process**
 
 1. Enter or paste the text you want to translate
 2. Press `Enter` (without Shift) to start translation
-   - Or click the Enter key indicator that appears when text is entered
+   - An Enter key indicator (↵) appears when text is entered, but it's only visual - you must press the Enter key to translate
 3. A loading spinner appears in the header during translation
 4. On success:
    - A green checkmark appears
@@ -280,9 +282,7 @@ This page allows you to customize translation behavior and target language.
 - Search bar at the top: Type to search for a language
 - Dropdown list shows all available languages (100+)
 - Each language shows:
-  - Flag emoji
-  - Language name in English
-  - Language name in native script (if applicable)
+  - Language name (e.g., "English", "Turkish")
 - Select a language to set as target
 - Default language is English (EN)
 
@@ -372,7 +372,7 @@ This page allows you to customize the global keyboard shortcut for opening the t
 
 ### Prompt Settings
 
-This page allows you to create and manage custom translation prompts. You can save up to 5 prompts.
+This page allows you to create and manage custom translation prompts.
 
 #### Prompt Selection
 
@@ -391,7 +391,7 @@ This page allows you to create and manage custom translation prompts. You can sa
 
 **Adding New Prompt**
 
-1. Click "Add New Prompt" button (if less than 5 prompts exist)
+1. Click "Add New Prompt" button
 2. Modal dialog opens
 3. Enter prompt name (e.g., "Technical Documentation")
 4. Enter prompt content (the actual prompt text)
@@ -413,12 +413,6 @@ This page allows you to create and manage custom translation prompts. You can sa
 3. Shows prompt name in confirmation message
 4. Click "Confirm" to delete (action cannot be undone)
 5. Click "Cancel" to abort
-
-**Limits**
-
-- Maximum 5 prompts can be saved
-- When limit is reached, "Maximum 5 prompts can be saved" message appears
-- "Add New Prompt" button is disabled when limit is reached
 
 **Empty State**
 
@@ -593,7 +587,7 @@ Right-click on the tray icon to access:
 ### Efficient Usage
 
 - **Remember Your Shortcut**: The default is `Ctrl+Shift+T` / `Cmd+Shift+T`, customize it if needed
-- **Use Refinement Mode**: For English translations, enable refinement mode for better results
+- **Use Refinement Mode**: Enable refinement mode for better translation quality in any target language
 - **Custom Prompts**: Create prompts for specific use cases (technical docs, casual conversations, etc.)
 - **Target Language**: Set your most-used target language in Translation Settings
 

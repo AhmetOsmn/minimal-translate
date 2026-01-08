@@ -9,8 +9,8 @@ declare global {
       onFocusInput: (callback: () => void) => void;
       getSelectedModel: () => Promise<string>;
       setSelectedModel: (modelId: string) => Promise<void>;
-      getRefineEnglish: () => Promise<boolean>;
-      setRefineEnglish: (value: boolean) => Promise<void>;
+      getEnableRefinement: () => Promise<boolean>;
+      setEnableRefinement: (value: boolean) => Promise<void>;
       getTargetLanguage: () => Promise<string>;
       getDarkMode: () => Promise<boolean>;
       openSettings: () => void;

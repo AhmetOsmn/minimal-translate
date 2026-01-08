@@ -9,7 +9,7 @@ export const store = new Store<AppConfig>({
     encryptedApiKeys: DEFAULT_CONFIG.encryptedApiKeys,
     openrouterModel: DEFAULT_CONFIG.openrouterModel,
     shortcut: DEFAULT_CONFIG.shortcut,
-    refineEnglish: DEFAULT_CONFIG.refineEnglish,
+    enableRefinement: DEFAULT_CONFIG.enableRefinement,
     userPrompts: [],
     selectedUserPromptId: DEFAULT_CONFIG.selectedUserPromptId,
     targetLanguage: DEFAULT_CONFIG.targetLanguage,

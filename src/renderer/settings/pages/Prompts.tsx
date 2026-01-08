@@ -25,7 +25,6 @@ export default function Prompts() {
   const [deleteError, setDeleteError] = useState<string | null>(null);
 
   const previewLength = 100;
-  const canAddMore = userPrompts.length < 5;
 
   useEffect(() => {
     window.settingsAPI?.getConfig().then((config) => {
@@ -166,32 +165,25 @@ export default function Prompts() {
           <h3 className="text-theme-text-primary font-medium">
             {t("settings.prompts.management")}
           </h3>
-          {canAddMore && (
-            <button
-              onClick={() => handleOpenModal()}
-              className="btn-primary flex items-center gap-2 text-sm"
+          <button
+            onClick={() => handleOpenModal()}
+            className="btn-primary flex items-center gap-2 text-sm"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 4v16m8-8H4"
-                />
-              </svg>
-              {t("settings.prompts.addNew")}
-            </button>
-          )}
-          {!canAddMore && (
-            <span className="text-xs text-theme-text-muted">
-              {t("settings.prompts.maxReached")}
-            </span>
-          )}
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+            {t("settings.prompts.addNew")}
+          </button>
         </div>
 
         {userPrompts.length === 0 ? (

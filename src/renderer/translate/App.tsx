@@ -16,7 +16,7 @@ function App() {
   const [state, setState] = useState<TranslateState>('idle')
   const [error, setError] = useState('')
   const [selectedModel, setSelectedModel] = useState('openai')
-  const [refineEnglish, setRefineEnglish] = useState(false)
+  const [enableRefinement, setEnableRefinement] = useState(false)
   const [targetLanguage, setTargetLanguage] = useState('en')
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
@@ -45,9 +45,9 @@ function App() {
       if (model) setSelectedModel(model)
     })
 
-    // Get refine english setting
-    window.electronAPI?.getRefineEnglish().then((value) => {
-      setRefineEnglish(value)
+    // Get enable refinement setting
+    window.electronAPI?.getEnableRefinement().then((value) => {
+      setEnableRefinement(value)
     })
 
     // Get target language
@@ -121,9 +121,9 @@ function App() {
   }
 
   const handleRefineToggle = async () => {
-    const newValue = !refineEnglish
-    setRefineEnglish(newValue)
-    await window.electronAPI?.setRefineEnglish(newValue)
+    const newValue = !enableRefinement
+    setEnableRefinement(newValue)
+    await window.electronAPI?.setEnableRefinement(newValue)
   }
 
   return (
@@ -139,7 +139,7 @@ function App() {
         selectedModelId={selectedModel}
         onModelChange={handleModelChange}
         onOpenSettings={handleOpenSettings}
-        refineEnglish={refineEnglish}
+        enableRefinement={enableRefinement}
         onRefineToggle={handleRefineToggle}
         targetLanguage={targetLanguage}
       />
