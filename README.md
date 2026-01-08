@@ -1,5 +1,3 @@
-> **🌐 Language / Dil**: This page is available in [English](https://ahmetosmn.github.io/minimal-translate/README.en.html) | [Türkçe](https://ahmetosmn.github.io/minimal-translate/README.tr.html)
-
 # Minimal Translate - User Guide
 
 Minimal Translate is a fast, minimal, and powerful desktop translation application. Access instant translation from anywhere with a global hotkey. Get professional results with AI-powered translation engines.
