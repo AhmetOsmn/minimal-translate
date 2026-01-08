@@ -11,7 +11,7 @@ export const DEFAULT_CONFIG = {
   encryptedApiKeys: {},
   openrouterModel: "openai/gpt-4o-mini",
   shortcut: "CommandOrControl+Shift+T",
-  refineEnglish: false,
+  enableRefinement: false,
   userPrompts: [],
   selectedUserPromptId: null,
   targetLanguage: "en",
@@ -31,4 +31,3 @@ export const SETTINGS_WINDOW_DIMENSIONS = {
   minWidth: 600,
   minHeight: 450,
 } as const;
-

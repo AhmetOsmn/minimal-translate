@@ -10,7 +10,7 @@ export interface AppConfig {
   openrouterModel: string;
   shortcut: string;
   openAtLastPosition: boolean;
-  refineEnglish: boolean;
+  enableRefinement: boolean;
   targetLanguage: string;
   userPrompts?: UserPrompt[];
   selectedUserPromptId?: string | null;

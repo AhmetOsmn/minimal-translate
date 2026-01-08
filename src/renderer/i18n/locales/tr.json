@@ -154,7 +154,7 @@
     },
     "prompts": {
       "title": "Prompt Ayarları",
-      "subtitle": "Çeviri işlemlerinde kullanılacak varsayılan prompt'larınızı yönetin. En fazla 5 prompt kaydedebilirsiniz.",
+      "subtitle": "Çeviri işlemlerinde kullanılacak varsayılan prompt'larınızı yönetin.",
       "selected": "Seçili Prompt",
       "management": "Prompt Yönetimi",
       "addNew": "Yeni Prompt Ekle",

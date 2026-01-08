@@ -42,15 +42,15 @@ const exampleTranslations: Record<string, string> = {
 export default function TranslationSettings() {
   const { t } = useTranslation();
   const languages = useLanguages();
-  const [refineEnglish, setRefineEnglish] = useState(false);
+  const [enableRefinement, setEnableRefinement] = useState(false);
   const [targetLanguage, setTargetLanguage] = useState("en");
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
 
   useEffect(() => {
     window.settingsAPI?.getConfig().then((config) => {
-      if (config?.refineEnglish !== undefined) {
-        setRefineEnglish(config.refineEnglish);
+      if (config?.enableRefinement !== undefined) {
+        setEnableRefinement(config.enableRefinement);
       }
       if (config?.targetLanguage !== undefined) {
         setTargetLanguage(config.targetLanguage);
@@ -77,17 +77,17 @@ export default function TranslationSettings() {
   };
 
   const handleRefineToggle = async () => {
-    const newValue = !refineEnglish;
-    setRefineEnglish(newValue);
+    const newValue = !enableRefinement;
+    setEnableRefinement(newValue);
     setSaving(true);
     setSaveError(null);
 
     try {
-      await window.settingsAPI?.saveConfig({ refineEnglish: newValue });
+      await window.settingsAPI?.saveConfig({ enableRefinement: newValue });
     } catch (error) {
       console.error("Failed to save refine setting:", error);
       setSaveError(t("errors.saveFailed"));
-      setRefineEnglish(!newValue);
+      setEnableRefinement(!newValue);
     } finally {
       setSaving(false);
     }
@@ -152,11 +152,11 @@ export default function TranslationSettings() {
         error={saveError}
       >
         <ToggleSwitch
-          checked={refineEnglish}
+          checked={enableRefinement}
           onChange={handleRefineToggle}
           disabled={saving}
           statusLabel={
-            refineEnglish ? (
+            enableRefinement ? (
               <>
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                 <span className="text-green-400">{t("common.active")}</span>

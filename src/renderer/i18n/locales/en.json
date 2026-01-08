@@ -154,7 +154,7 @@
     },
     "prompts": {
       "title": "Prompt Settings",
-      "subtitle": "Manage your default prompts for translation operations. You can save up to 5 prompts.",
+      "subtitle": "Manage your default prompts for translation operations.",
       "selected": "Selected Prompt",
       "management": "Prompt Management",
       "addNew": "Add New Prompt",

@@ -16,7 +16,7 @@ export function registerTranslationHandlers(): void {
   ipcMain.handle("translate", async (event, text: string) => {
     const selectedModel = store.get("selectedModel") as string;
     const apiKeys = getDecryptedApiKeys();
-    const refineEnglish = store.get("refineEnglish") as boolean;
+    const enableRefinement = store.get("enableRefinement") as boolean;
     const openrouterModel = store.get("openrouterModel") as string;
     const targetLanguage = (store.get("targetLanguage") as string) || "en";
     const sendNotifications =
@@ -57,7 +57,7 @@ export function registerTranslationHandlers(): void {
       );
       const userDefaultPrompt = selectedPrompt?.content || undefined;
 
-      const result = await translate(text, selectedModel, apiKey, refineEnglish, {
+      const result = await translate(text, selectedModel, apiKey, enableRefinement, {
         openrouterModel,
         userDefaultPrompt,
         targetLanguage,
