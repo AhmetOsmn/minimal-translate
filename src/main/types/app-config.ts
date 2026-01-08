@@ -6,7 +6,7 @@ export interface AppConfig {
   encryptedApiKeys: Record<string, string>;
   openrouterModel: string;
   shortcut: string;
-  refineEnglish: boolean;
+  enableRefinement: boolean;
   userPrompts: UserPrompt[];
   selectedUserPromptId: string | null;
   targetLanguage: string;

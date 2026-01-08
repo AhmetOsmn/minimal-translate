@@ -19,7 +19,7 @@ interface TranslateInputProps {
   selectedModelId: string
   onModelChange: (modelId: string) => void
   onOpenSettings: () => void
-  refineEnglish: boolean
+  enableRefinement: boolean
   onRefineToggle: () => void
   targetLanguage: string
 }
@@ -31,7 +31,7 @@ function formatLanguageCode(code: string): string {
 
 
 const TranslateInput = forwardRef<HTMLTextAreaElement, TranslateInputProps>(
-  ({ value, onChange, onKeyDown, state, error, modelName, selectedModelId, onModelChange, onOpenSettings, refineEnglish, onRefineToggle, targetLanguage }, ref) => {
+  ({ value, onChange, onKeyDown, state, error, modelName, selectedModelId, onModelChange, onOpenSettings, enableRefinement, onRefineToggle, targetLanguage }, ref) => {
     const { t } = useTranslation()
     const textareaRef = useRef<HTMLTextAreaElement | null>(null)
     const [showModelPicker, setShowModelPicker] = useState(false)
@@ -121,15 +121,15 @@ const TranslateInput = forwardRef<HTMLTextAreaElement, TranslateInputProps>(
               {/* Refine toggle */}
               <button
                 onClick={onRefineToggle}
-                title={refineEnglish ? t('translate.refineActive') : t('translate.refineInactive')}
+                title={enableRefinement ? t('translate.refineActive') : t('translate.refineInactive')}
                 className={`ml-1 px-1.5 py-0.5 rounded text-[9px] font-medium transition-all flex items-center gap-0.5 ${
-                  refineEnglish
+                  enableRefinement
                     ? 'bg-violet-500/30 text-violet-300 hover:bg-violet-500/40'
                     : 'bg-theme-bg-tertiary/50 text-theme-text-secondary hover:bg-theme-border-secondary/50'
                 }`}
               >
                 <span>✨</span>
-                {refineEnglish && (
+                {enableRefinement && (
                   <svg className="w-2 h-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                   </svg>

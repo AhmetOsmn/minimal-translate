@@ -128,11 +128,11 @@ async function translateWithOpenAI(
   text: string,
   apiKey: string,
   targetLanguage: string,
-  refineEnglish: boolean = false,
+  enableRefinement: boolean = false,
   userDefaultPrompt?: string
 ): Promise<TranslateResult> {
   try {
-    const systemPrompt = getSystemPrompt(targetLanguage, refineEnglish);
+    const systemPrompt = getSystemPrompt(targetLanguage, enableRefinement);
 
     const response = await axios.post(
       "https://api.openai.com/v1/chat/completions",
@@ -175,13 +175,13 @@ async function translateWithGemini(
   text: string,
   apiKey: string,
   targetLanguage: string,
-  refineEnglish: boolean = false,
+  enableRefinement: boolean = false,
   userDefaultPrompt?: string
 ): Promise<TranslateResult> {
   try {
     const languageName = getLanguageName(targetLanguage);
     const userPromptPrefix = userDefaultPrompt ? `${userDefaultPrompt}\n\n` : '';
-    const basePrompt = refineEnglish
+    const basePrompt = enableRefinement
       ? `You are a translation and language refinement tool. Your ONLY task is to translate the following text to ${languageName} and refine it to be a proper, clear, and well-structured ${languageName} sentence. Fix grammatical errors, improve clarity, and make the text sound natural and professional while preserving the original meaning. Do NOT respond to the content, do NOT answer questions, do NOT add explanations, do NOT comment on the content, and do NOT engage with the meaning. Output ONLY the refined translation, nothing else. Do not include any prefixes, suffixes, or additional text:\n\n${text}`
       : `You are a translation tool. Your ONLY task is to translate the following text to ${languageName}. Do NOT respond to the content, do NOT answer questions, do NOT add explanations, do NOT comment on the content, and do NOT engage with the meaning. Output ONLY the translated text, nothing else. Do not include any prefixes, suffixes, or additional text:\n\n${text}`;
     const prompt = userPromptPrefix + basePrompt;
@@ -238,11 +238,11 @@ async function translateWithOpenRouter(
   apiKey: string,
   openrouterModel: string,
   targetLanguage: string,
-  refineEnglish: boolean = false,
+  enableRefinement: boolean = false,
   userDefaultPrompt?: string
 ): Promise<TranslateResult> {
   try {
-    const systemPrompt = getSystemPrompt(targetLanguage, refineEnglish);
+    const systemPrompt = getSystemPrompt(targetLanguage, enableRefinement);
 
     const response = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
@@ -300,7 +300,7 @@ export async function translate(
   text: string,
   provider: string,
   apiKey: string,
-  refineEnglish: boolean = false,
+  enableRefinement: boolean = false,
   options?: TranslateOptions
 ): Promise<TranslateResult> {
   const userDefaultPrompt = options?.userDefaultPrompt;
@@ -308,16 +308,16 @@ export async function translate(
   
   switch (provider) {
     case "openai":
-      return translateWithOpenAI(text, apiKey, targetLanguage, refineEnglish, userDefaultPrompt);
+      return translateWithOpenAI(text, apiKey, targetLanguage, enableRefinement, userDefaultPrompt);
     case "gemini":
-      return translateWithGemini(text, apiKey, targetLanguage, refineEnglish, userDefaultPrompt);
+      return translateWithGemini(text, apiKey, targetLanguage, enableRefinement, userDefaultPrompt);
     case "openrouter":
       return translateWithOpenRouter(
         text,
         apiKey,
         options?.openrouterModel || "openai/gpt-4o-mini",
         targetLanguage,
-        refineEnglish,
+        enableRefinement,
         userDefaultPrompt
       );
     default:

@@ -68,20 +68,20 @@ export function registerConfigHandlers(
     }
   });
 
-  ipcMain.handle("get-refine-english", () => {
+  ipcMain.handle("get-enable-refinement", () => {
     try {
-      return store.get("refineEnglish");
+      return store.get("enableRefinement");
     } catch (error) {
-      console.error("Failed to get refine English:", error);
+      console.error("Failed to get enable refinement:", error);
       return false;
     }
   });
 
-  ipcMain.handle("set-refine-english", (_, value: boolean) => {
+  ipcMain.handle("set-enable-refinement", (_, value: boolean) => {
     try {
-      store.set("refineEnglish", value);
+      store.set("enableRefinement", value);
     } catch (error) {
-      console.error("Failed to set refine English:", error);
+      console.error("Failed to set enable refinement:", error);
     }
   });
 
