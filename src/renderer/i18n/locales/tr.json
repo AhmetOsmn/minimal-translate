@@ -40,10 +40,10 @@
     "apiKeyError": "API anahtarı"
   },
   "settings": {
-    "title": "Minimal Translate Ayarları",
+    "title": "LLM Prompter Ayarları",
     "howto": {
       "title": "Nasıl Kullanılır",
-      "subtitle": "Minimal Translate ile hızlıca çeviri yapın",
+      "subtitle": "LLM Prompter ile hızlıca çeviri yapın",
       "step1": {
         "title": "Kısayolu Kullanın",
         "description": "Herhangi bir yerde bu tuşlara basın:"
@@ -184,7 +184,7 @@
         "title": "Bildirim İzni Reddedildi",
         "step1": "1. Sistem Tercihleri'ni açın",
         "step2": "2. Bildirimler bölümüne gidin",
-        "step3": "3. Minimal Translate uygulamasını bulun ve bildirimleri etkinleştirin"
+        "step3": "3. LLM Prompter uygulamasını bulun ve bildirimleri etkinleştirin"
       },
       "permissionDefault": {
         "message": "Bildirim izni henüz verilmedi. Sistem izin istediğinde 'İzin Ver' seçeneğini seçin."

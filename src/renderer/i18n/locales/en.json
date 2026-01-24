@@ -40,10 +40,10 @@
     "apiKeyError": "API key"
   },
   "settings": {
-    "title": "Minimal Translate Settings",
+    "title": "LLM Prompter Settings",
     "howto": {
       "title": "How to Use",
-      "subtitle": "Translate quickly with Minimal Translate",
+      "subtitle": "Translate quickly with LLM Prompter",
       "step1": {
         "title": "Use the Shortcut",
         "description": "Press these keys anywhere:"
@@ -184,7 +184,7 @@
         "title": "Notification Permission Denied",
         "step1": "1. Open System Preferences",
         "step2": "2. Go to Notifications",
-        "step3": "3. Find Minimal Translate app and enable notifications"
+        "step3": "3. Find LLM Prompter app and enable notifications"
       },
       "permissionDefault": {
         "message": "Notification permission has not been granted yet. When the system asks for permission, select 'Allow'."
