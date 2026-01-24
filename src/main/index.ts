@@ -53,7 +53,7 @@ function registerAllHandlers(): void {
 app.whenReady().then(() => {
   // Set App User Model ID for Windows notifications
   if (process.platform === "win32") {
-    app.setAppUserModelId("com.minimal-translate.app");
+    app.setAppUserModelId("com.llm-prompter.app");
   }
 
   // Migrate plain text API keys to encrypted storage

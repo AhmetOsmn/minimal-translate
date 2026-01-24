@@ -33,7 +33,7 @@ export function createTray(): void {
     },
   ]);
 
-  tray.setToolTip("Minimal Translate");
+  tray.setToolTip("LLM Prompter");
   tray.setContextMenu(contextMenu);
 
   tray.on("click", () => {
