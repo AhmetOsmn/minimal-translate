@@ -1,38 +1,41 @@
-# Minimal Translate - User Guide
+# LLM Prompter - User Guide
 
 ![Demo](assets/review.gif)
 
-Minimal Translate is a fast, minimal, and powerful desktop translation application. Access instant translation from anywhere with a global hotkey. Get professional results with AI-powered translation engines.
+LLM Prompter is a fast, powerful desktop application for generating AI-optimized prompts. Access instant prompt generation from anywhere with a global hotkey. Create custom prompt templates, or use the default behavior to generate English prompts from any language input.
 
 ## Table of Contents
 
 - [Overview](#overview)
 - [Main Features](#main-features)
 - [Application Screens](#application-screens)
-  - [Translation Window](#translation-window)
+  - [Prompt Window](#prompt-window)
   - [Settings Window](#settings-window)
     - [How to Use](#how-to-use)
     - [AI Models](#ai-models)
     - [API Keys](#api-keys)
-    - [Translation Settings](#translation-settings)
+    - [Output Settings](#output-settings)
     - [Keyboard Shortcuts](#keyboard-shortcuts)
-    - [Prompt Settings](#prompt-settings)
+    - [Prompt Templates](#prompt-templates)
     - [Notifications](#notifications)
   - [Sidebar Features](#sidebar-features)
   - [System Tray](#system-tray)
 
 ## Overview
 
-Minimal Translate runs in the background and stays accessible in the system tray. With a global keyboard shortcut, you can instantly open the translation window from any application and translate text seamlessly.
+LLM Prompter runs in the background and stays accessible in the system tray. With a global keyboard shortcut, you can instantly open the prompt window from any application and generate optimized prompts seamlessly.
+
+**Default Behavior**: When no custom template is selected, the app automatically converts your input to English, making it perfect for non-English speakers working with English-based LLMs.
 
 ## Main Features
 
-- **Instant Access**: Global hotkey (`Ctrl+Shift+T` / `Cmd+Shift+T`) opens translation window from anywhere
+- **Instant Access**: Global hotkey (`Ctrl+Shift+T` / `Cmd+Shift+T`) opens prompt window from anywhere
 - **Multiple AI Support**: OpenAI (GPT-4, GPT-4o-mini), Google Gemini, and OpenRouter with access to hundreds of models
-- **Auto Copy**: Translation results are automatically copied to clipboard
-- **100+ Languages**: Support for over 100 target languages
-- **Refinement Mode**: Automatic improvement for translations in any target language
-- **Custom Prompts**: Create and use your own translation prompts
+- **Custom Prompt Templates**: Create and save reusable prompt templates for different use cases
+- **Smart Default**: Automatically generates English prompts when no template is selected
+- **Auto Copy**: Generated prompts are automatically copied to clipboard
+- **100+ Languages**: Support for input and output in over 100 languages
+- **Refinement Mode**: Automatic optimization for prompts in any target language
 - **Customizable Shortcuts**: Set your preferred keyboard shortcut combination
 - **Dark Mode**: Eye-friendly dark theme support
 - **Multi-language UI**: English and Turkish interface support
@@ -41,16 +44,16 @@ Minimal Translate runs in the background and stays accessible in the system tray
 
 ## Application Screens
 
-### Translation Window
+### Prompt Window
 
-The translation window is the main interface where you perform translations. It can be opened from anywhere using the global keyboard shortcut.
+The prompt window is the main interface where you generate AI prompts. It can be opened from anywhere using the global keyboard shortcut.
 
-#### Opening the Translation Window
+#### Opening the Prompt Window
 
 - Press the global hotkey (`Ctrl+Shift+T` on Windows/Linux or `Cmd+Shift+T` on macOS) from any application
 - The window will appear in the center of your screen with focus on the text input
 
-#### Translation Window Features
+#### Prompt Window Features
 
 **Text Input Area**
 
@@ -65,32 +68,32 @@ The translation window is the main interface where you perform translations. It 
   - **GPT**: OpenAI models
   - **Gemini**: Google Gemini models
   - **OpenRouter**: OpenRouter models
-- Select a model to switch translation service
+- Select a model to switch AI service
 - The selected model is saved automatically
 
-**Target Language Display**
+**Output Language Display**
 
-- Shows the current target language code (e.g., "EN", "TR", "DE") next to the model indicator
-- The target language is set in Translation Settings
+- Shows the current output language code (e.g., "EN", "TR", "DE") next to the model indicator
+- The output language is set in Output Settings
 
 **Refinement Mode Toggle**
 
 - Look for the ✨ icon button in the header
 - Click to toggle refinement mode on/off
 - When active, the icon shows a checkmark (✨✓)
-- Refinement mode improves translations in the selected target language for better grammar and expression
+- Refinement mode optimizes prompts in the selected output language for better clarity and effectiveness
 - The setting is saved automatically
 
-**Translation Process**
+**Prompt Generation Process**
 
-1. Enter or paste the text you want to translate
-2. Press `Enter` (without Shift) to start translation
-   - An Enter key indicator (↵) appears when text is entered, but it's only visual - you must press the Enter key to translate
-3. A loading spinner appears in the header during translation
+1. Enter or paste the text you want to convert into a prompt
+2. Press `Enter` (without Shift) to start generation
+   - An Enter key indicator (↵) appears when text is entered, but it's only visual - you must press the Enter key to generate
+3. A loading spinner appears in the header during processing
 4. On success:
    - A green checkmark appears
    - "Copied to clipboard!" message is displayed
-   - The translation is automatically copied to your clipboard
+   - The generated prompt is automatically copied to your clipboard
    - Window closes automatically after 600ms
 5. On error:
    - A red X icon appears
@@ -107,25 +110,25 @@ The translation window is the main interface where you perform translations. It 
 
 - Press `Escape` key
 - Click outside the window
-- Window closes automatically after successful translation
+- Window closes automatically after successful generation
 
-#### Keyboard Shortcuts in Translation Window
+#### Keyboard Shortcuts in Prompt Window
 
-- `Enter`: Start translation (when text is entered)
+- `Enter`: Generate prompt (when text is entered)
 - `Shift+Enter`: Insert new line in textarea
-- `Escape`: Close translation window
+- `Escape`: Close prompt window
 - `Ctrl+V` / `Cmd+V`: Paste text into input
 
 ---
 
 ### Settings Window
 
-The Settings window provides access to all application configuration options. It can be opened from the system tray icon or from the translation window.
+The Settings window provides access to all application configuration options. It can be opened from the system tray icon or from the prompt window.
 
 #### Opening Settings
 
 - Right-click on the system tray icon and select "Settings"
-- Click the gear icon (⚙️) in the translation window
+- Click the gear icon (⚙️) in the prompt window
 - Settings window will open with the sidebar on the left
 
 #### Settings Window Structure
@@ -140,29 +143,29 @@ The settings window consists of:
 
 ### How to Use
 
-This is the default page when Settings opens. It provides a quick guide on how to use Minimal Translate.
+This is the default page when Settings opens. It provides a quick guide on how to use LLM Prompter.
 
 #### Features
 
 **4-Step Usage Guide**
 
 1. **Use the Shortcut**: Shows your current keyboard shortcut (e.g., `⌘/Ctrl + ⇧ + T`)
-2. **Type the Text**: Instructions to enter text in the translation window
-3. **Press Enter**: How to trigger translation
-4. **Paste**: How to use the translated text that's copied to clipboard
+2. **Type the Text**: Instructions to enter text in the prompt window
+3. **Press Enter**: How to trigger prompt generation
+4. **Paste**: How to use the generated prompt that's copied to clipboard
 
 **Tips Section**
 
-- Press `ESC` to close the translation window
+- Press `ESC` to close the prompt window
 - Click outside the window to close it
-- Translation is automatically copied to clipboard when completed
+- Generated prompts are automatically copied to clipboard when completed
 - Source language is automatically detected
 
 ---
 
 ### AI Models
 
-This page allows you to select and configure the AI translation service.
+This page allows you to select and configure the AI service for prompt generation.
 
 #### Model Selection
 
@@ -172,14 +175,14 @@ Three main models are available:
 
 - Select the card to use OpenAI models
 - Requires OpenAI API key
-- Best for: Contextual translation, understanding idioms and nuances
+- Best for: Contextual understanding, nuanced prompt generation
 - Model selection badge: 🤖
 
 **Google Gemini**
 
 - Select the card to use Google Gemini
 - Requires Google Gemini API key
-- Best for: Advanced AI translation, ideal for complex texts
+- Best for: Advanced AI processing, ideal for complex prompts
 - Model selection badge: ✨
 
 **OpenRouter**
@@ -223,7 +226,7 @@ When OpenRouter is selected, additional options appear:
 
 ### API Keys
 
-This page allows you to manage API keys for all translation services. API keys are stored encrypted using your system's secure storage.
+This page allows you to manage API keys for all AI services. API keys are stored encrypted using your system's secure storage.
 
 #### API Key Management
 
@@ -263,7 +266,7 @@ For each service (OpenAI, Gemini, OpenRouter):
 
 - API keys are encrypted using your operating system's secure storage
 - They are never sent to our servers
-- Used only locally for translation requests
+- Used only locally for AI API requests
 - Each platform uses its native secure storage:
   - macOS: Keychain
   - Windows: Credential Store
@@ -271,11 +274,11 @@ For each service (OpenAI, Gemini, OpenRouter):
 
 ---
 
-### Translation Settings
+### Output Settings
 
-This page allows you to customize translation behavior and target language.
+This page allows you to customize prompt generation behavior and output language.
 
-#### Target Language Selection
+#### Output Language Selection
 
 **Language Picker**
 
@@ -283,7 +286,7 @@ This page allows you to customize translation behavior and target language.
 - Dropdown list shows all available languages (100+)
 - Each language shows:
   - Language name (e.g., "English", "Turkish")
-- Select a language to set as target
+- Select a language to set as output
 - Default language is English (EN)
 
 **Popular Languages**
@@ -307,24 +310,24 @@ This page allows you to customize translation behavior and target language.
 
 **What Refinement Does**
 
-- When active, translations to the selected language are improved
-- AI model not only translates but also improves grammar and expression
-- Results in smoother, more natural translations
+- When active, generated prompts in the selected language are optimized
+- AI model not only generates but also improves clarity and effectiveness
+- Results in more precise, better-structured prompts
 
-#### Translation Example
+#### Example Display
 
 **Example Display**
 
 - Shows a sample input text
-- Shows the translation result in the selected target language
-- Updates automatically when target language changes
-- Helps you understand the translation quality
+- Shows the generated result in the selected output language
+- Updates automatically when output language changes
+- Helps you understand the generation quality
 
 ---
 
 ### Keyboard Shortcuts
 
-This page allows you to customize the global keyboard shortcut for opening the translation window.
+This page allows you to customize the global keyboard shortcut for opening the prompt window.
 
 #### Current Shortcut Display
 
@@ -370,67 +373,100 @@ This page allows you to customize the global keyboard shortcut for opening the t
 
 ---
 
-### Prompt Settings
+### Prompt Templates
 
-This page allows you to create and manage custom translation prompts.
+This page allows you to create and manage custom prompt templates for different use cases.
 
-#### Prompt Selection
+#### Understanding Prompt Templates
 
-**Prompt List**
+**What are Prompt Templates?**
 
-- Shows all saved prompts at the top
-- Each prompt card displays:
-  - Prompt name
-  - Preview of prompt content (first 100 characters)
+Prompt templates are pre-defined prompt structures that help you generate consistent, high-quality prompts for specific tasks. Instead of manually writing the same type of prompt repeatedly, you can create a template once and reuse it with different inputs.
+
+**Default Behavior**
+
+When no template is selected (None), the app uses its default behavior:
+- Automatically converts your input to English
+- Perfect for non-English speakers working with English-based LLMs
+- Simple and effective for general-purpose use
+
+**Use Cases for Templates**
+
+- **Technical Documentation**: Generate prompts for explaining code or technical concepts
+- **Creative Writing**: Create story prompts, character descriptions, or plot ideas
+- **Data Analysis**: Structured prompts for analyzing datasets or generating reports
+- **Code Review**: Consistent format for code review requests
+- **Meeting Summaries**: Template for converting meeting notes into structured summaries
+
+#### Prompt Template Selection
+
+**Template List**
+
+- Shows all saved templates at the top
+- Each template card displays:
+  - Template name
+  - Preview of template content (first 100 characters)
   - Selected indicator (checkmark) if currently active
-- Click on a prompt card to select it
-- Selected prompt will be used for all translations
-- "None" option to use default system prompt
+- Click on a template card to select it
+- Selected template will be used for all prompt generation
+- "None" option to use default behavior (English conversion)
 
-#### Prompt Management
+#### Template Management
 
-**Adding New Prompt**
+**Adding New Template**
 
-1. Click "Add New Prompt" button
+1. Click "Add New Template" button
 2. Modal dialog opens
-3. Enter prompt name (e.g., "Technical Documentation")
-4. Enter prompt content (the actual prompt text)
+3. Enter template name (e.g., "Technical Documentation", "Story Prompt")
+4. Enter template content (the actual prompt structure)
 5. Click "Save"
-6. Prompt is added to the list
+6. Template is added to the list
 
-**Editing Prompt**
+**Template Content Tips**
 
-1. Click the edit icon (pencil) on any prompt card
+- Use placeholders or general instructions
+- Be specific about the desired output format
+- Include context about the purpose
+- Example: "Explain the following concept in simple terms, suitable for beginners: [user input]"
+
+**Editing Template**
+
+1. Click the edit icon (pencil) on any template card
 2. Modal dialog opens with existing values
 3. Modify name or content
 4. Click "Save"
 5. Changes are saved
 
-**Deleting Prompt**
+**Deleting Template**
 
-1. Click the delete icon (trash) on any prompt card
-2. Confirmation dialog appears: "Delete Prompt"
-3. Shows prompt name in confirmation message
+1. Click the delete icon (trash) on any template card
+2. Confirmation dialog appears: "Delete Template"
+3. Shows template name in confirmation message
 4. Click "Confirm" to delete (action cannot be undone)
 5. Click "Cancel" to abort
 
 **Empty State**
 
-- If no prompts are saved, empty state message is shown
-- Encourages creating first prompt
+- If no templates are saved, empty state message is shown
+- Encourages creating first template
+
+**Template Limit**
+
+- Maximum 5 templates can be saved
+- Message appears when limit is reached
 
 ---
 
 ### Notifications
 
-This page allows you to manage notification settings for translation completion.
+This page allows you to manage notification settings for prompt generation completion.
 
 #### Send Notifications
 
 **Toggle Switch**
 
 - Title: "Send Notifications"
-- Description: "When active, a notification will be sent when translation is completed."
+- Description: "When active, a notification will be sent when prompt generation is completed."
 - Toggle to enable/disable notifications
 - When active:
   - Switch shows green indicator
@@ -457,7 +493,7 @@ This page allows you to manage notification settings for translation completion.
 - Instructions provided for enabling notifications:
   1. Open System Preferences
   2. Go to Notifications section
-  3. Find Minimal Translate app
+  3. Find LLM Prompter app
   4. Enable notifications
 
 **Automatic Checking**
@@ -483,9 +519,9 @@ The sidebar in the Settings window provides navigation and additional controls.
 - **How to Use**: Quick start guide
 - **AI Models**: Model selection and configuration
 - **API Keys**: API key management
-- **Translation Settings**: Language and refinement settings
+- **Output Settings**: Language and refinement settings
 - **Keyboard Shortcuts**: Shortcut customization
-- **Prompt Settings**: Custom prompt management
+- **Prompt Templates**: Custom template management
 - **Notifications**: Notification preferences
 
 **Active Page Indicator**
@@ -500,7 +536,7 @@ The sidebar in the Settings window provides navigation and additional controls.
 **Toggle Switch**
 
 - Switch to enable/disable dark mode
-- Applies to both Settings and Translation windows
+- Applies to both Settings and Prompt windows
 - Preference is saved immediately
 
 #### Language Toggle
@@ -523,13 +559,13 @@ The sidebar in the Settings window provides navigation and additional controls.
 
 ### System Tray
 
-Minimal Translate runs in the background and appears in the system tray (menu bar on macOS, system tray on Windows/Linux).
+LLM Prompter runs in the background and appears in the system tray (menu bar on macOS, system tray on Windows/Linux).
 
 #### Tray Icon
 
 **Appearance**
 
-- Minimal Translate icon appears in system tray
+- LLM Prompter icon appears in system tray
 - Icon is always visible when app is running
 - App runs in background (doesn't show in dock/taskbar)
 
@@ -540,7 +576,7 @@ Right-click on the tray icon to access:
 **Settings**
 
 - Opens the Settings window
-- Same as clicking the gear icon in translation window
+- Same as clicking the gear icon in prompt window
 
 **Quit**
 
@@ -560,14 +596,14 @@ Right-click on the tray icon to access:
 
 ### Global Shortcuts
 
-- `Ctrl+Shift+T` (Windows/Linux) / `Cmd+Shift+T` (macOS): Open translation window
+- `Ctrl+Shift+T` (Windows/Linux) / `Cmd+Shift+T` (macOS): Open prompt window
   - Customizable in Settings → Keyboard Shortcuts
 
-### Translation Window Shortcuts
+### Prompt Window Shortcuts
 
-- `Enter`: Start translation (when text is entered)
+- `Enter`: Generate prompt (when text is entered)
 - `Shift+Enter`: New line in textarea
-- `Escape`: Close translation window
+- `Escape`: Close prompt window
 
 ### General Shortcuts
 
@@ -587,13 +623,21 @@ Right-click on the tray icon to access:
 ### Efficient Usage
 
 - **Remember Your Shortcut**: The default is `Ctrl+Shift+T` / `Cmd+Shift+T`, customize it if needed
-- **Use Refinement Mode**: Enable refinement mode for better translation quality in any target language
-- **Custom Prompts**: Create prompts for specific use cases (technical docs, casual conversations, etc.)
-- **Target Language**: Set your most-used target language in Translation Settings
+- **Use Refinement Mode**: Enable refinement mode for better prompt quality in any output language
+- **Create Templates**: Build a library of prompt templates for your common use cases
+- **Default is English**: When no template is selected, your input is automatically converted to English
+
+### Template Creation Tips
+
+- **Be Specific**: Clear instructions produce better results
+- **Include Context**: Tell the AI what you're trying to achieve
+- **Use Examples**: Show the format or style you want
+- **Test and Iterate**: Try your template multiple times and refine based on results
+- **Organize by Purpose**: Name templates clearly (e.g., "Code Review", "Blog Post Idea")
 
 ### Troubleshooting
 
-- **Translation Fails**: Check that your API key is valid and has sufficient credits/quota
+- **Generation Fails**: Check that your API key is valid and has sufficient credits/quota
 - **Window Doesn't Open**: Verify your keyboard shortcut doesn't conflict with system shortcuts
 - **Notifications Don't Work**: Grant notification permissions in system settings
 - **API Key Error**: Go to Settings → API Keys and verify/test your API keys
@@ -604,8 +648,8 @@ Right-click on the tray icon to access:
 
 For issues, feature requests, or contributions, please visit:
 
-- **GitHub**: [Issues](https://github.com/AhmetOsmn/minimal-translate/issues)
-- **Releases**: [Latest Release](https://github.com/AhmetOsmn/minimal-translate/releases/latest)
+- **GitHub**: [Issues](https://github.com/AhmetOsmn/llm-prompter/issues)
+- **Releases**: [Latest Release](https://github.com/AhmetOsmn/llm-prompter/releases/latest)
 
 ---
 
